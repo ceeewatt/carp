@@ -1,0 +1,22 @@
+{
+    "version": "1.0.0",
+    "description": "This is a program that does nothing",
+
+    "options": [
+        {
+            "short": "v",
+            "arguments": 0,
+            "callback": "v_callback"
+        },
+        {
+            "short": "f",
+            "arguments": -1,
+            "callback": "f_callback"
+        },
+        {
+            "long": "longopt",
+            "arguments": 1,
+            "callback": "longopt_callback"
+        }
+    ]
+}
