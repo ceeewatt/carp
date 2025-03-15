@@ -73,7 +73,7 @@ int main(int argc, char* argv[]) {
 
     /* do stuff ... */
 
-    carp_clean(&carp);
+    carp_cleanup(&carp);
 }
 ```
 
