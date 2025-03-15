@@ -8,9 +8,6 @@ from shutil import which
 import os
 from os.path import dirname, realpath, join
 
-# CARP_FILE = "carp.json"
-# BUILD_DIR = "build"
-# SRC_RELATIVE_PATH = "../../"
 CARP_JSON_OPTION_SCHEMA = {
     "arguments": { "type": int, "default": "false", "required": True, "clean": None },
     "callback": { "type": str, "default": "null", "required": True, "clean": None }
@@ -241,8 +238,6 @@ def main():
     CARP_OUTPUT_DIR = sys.argv[2]
     CARP_JSON_FILE = sys.argv[3]
 
-    # src_abs_path = join(dirname(realpath(__file__)), SRC_RELATIVE_PATH)
-    # carp_json = carp_read_json(src_abs_path + "../" + CARP_FILE)
     carp_json = carp_read_json(CARP_JSON_FILE)
 
     for option in carp_json["options"]:
@@ -255,7 +250,6 @@ def main():
                 name = v.pop("long")
             carp_table_add_option(name, v)
 
-    # build_abs_path = src_abs_path + BUILD_DIR
     if CARP_IMPLEMENTATION == "hash":
         carp_gperf_generate_hash(carp_table, CARP_OUTPUT_DIR)
     else:
